@@ -1,0 +1,9 @@
+{
+  "_comment": "Cole em .vscode/mcp.json (workspace) OU Command Palette: 'MCP: Add Server' → HTTP → cole https://api.mcp.ai/p_ibama_certidao_embargos.",
+  "servers": {
+    "ibama_certidao_embargos": {
+      "type": "http",
+      "url": "https://api.mcp.ai/p_ibama_certidao_embargos"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+# Smithery configuration for IBAMA: Certidão de Embargos (Nada Consta)
+# Schema: https://smithery.ai/docs/build/project-config
+# Remote HTTP MCP — server hosted at https://api.mcp.ai/p_ibama_certidao_embargos
+
+name: ibama_certidao_embargos-mcp
+displayName: "IBAMA: Certidão de Embargos (Nada Consta)"
+description: >
+  IBAMA: Certidão de Embargos (Nada Consta), consulta em fonte oficial. Hospedado pela plataforma, sem credenciais da plataforma, pague por consulta com crédito pré-pago.
+
+version: 0.1.0
+license: MIT
+homepage: https://github.com/mcp-dir/ibama_certidao_embargos-mcp
+repository: https://github.com/mcp-dir/ibama_certidao_embargos-mcp
+
+tags:
+  - ibama_certidao_embargos
+  - brazil
+  - horizontal
+  - read-only
+
+# Remote HTTP MCP — sem startCommand local (servidor já hospedado)
+startCommand:
+  type: http
+  url: https://api.mcp.ai/p_ibama_certidao_embargos
+
+auth:
+  type: oauth2
+  resourceMetadataUrl: https://api.mcp.ai/p_ibama_certidao_embargos/.well-known/oauth-protected-resource
+  fallback:
+    type: agent-auth
+    description: >
+      Para clientes sem OAuth 2.1. O agente expõe uma tool authenticate(token).
+      Usuário gera o JWT em https://app.mcp.ai/agent-auth e cola no chat.
